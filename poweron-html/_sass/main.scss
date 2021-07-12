@@ -1,0 +1,359 @@
+@charset "utf-8";
+
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../node_modules/bulma/sass/utilities/functions";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;500;600;700&family=Titillium+Web&display=swap');
+$family-sans-serif: 'Noto Sans KR', sans-serif;
+$family-serif: 'Noto Serif KR', serif;
+$family-titillium: 'Titillium Web', 'Noto Sans KR', sans-serif;
+
+// Colors
+$postech-red: rgb(200, 1, 80);
+$postech-orange: rgb(255, 179, 0);
+$postech-gray: rgb(102, 102, 92);
+$poweron-blue: rgb(171, 199, 233);
+
+$warning: $postech-orange;
+$danger: $postech-red;
+$link: $postech-red;
+
+@import "../node_modules/bulma/sass/utilities/derived-variables";
+@import "../node_modules/bulma/sass/utilities/mixins";
+
+// Img
+img {
+    object-fit: cover;
+}
+
+// Navbar
+$navbar-height: 4rem;
+$navbar-padding-vertical: 0.5rem;
+$navbar-padding-horizontal: 0;
+$navbar-item-img-max-height: 2.25rem;
+
+.navbar {
+    font-family: $family-titillium !important;
+    border-bottom: 1px solid $white-ter;
+
+    @include from($desktop) {
+        li {
+            float: left;
+        }
+    }
+
+    li.is-active a {
+        color: $black !important;
+    }
+}
+.navbar-item {
+    font-size: 1.125em;
+}
+.navbar-brand {
+    img {
+        height: 36px;
+        width: auto;
+        margin-right: 0.5rem;
+    }
+}
+.p-navbar-search {
+    margin: auto 0.5rem;
+
+    @include until($desktop) {
+        margin-top: 0.5rem;
+    }
+
+    @include from ($desktop) {
+        width: 360px;
+    }
+}
+
+// Wordpress
+.p-wordpress {
+    p {
+        line-height: 2;
+        margin-bottom: 1.5rem !important;
+    }
+
+    table {
+        @extend .table;
+        @extend .is-fullwidth;
+        @extend .is-hoverable;
+        @extend .is-striped;
+    }
+
+    .p-table-container {
+        @extend .table-container;
+        @include until($desktop) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+}
+
+.p-navbar-wp {
+    margin-top: 32px;
+
+    @media screen and (max-width: 782px) {
+        margin-top: 46px;
+    }
+}
+
+// Footer
+.footer {
+    .content {
+        margin-top: 1.5rem;
+        margin-bottom: -3rem;
+        font-size: 0.75em;
+    }
+}
+.p-footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .p-poweron {
+        width: 64px;
+        height: 64px;
+    }
+    i {
+        font-size: 1.25rem;
+        color: $postech-gray;
+        margin-left: 1rem;
+        margin-right: 0.25rem;
+    }
+    .p-postech {
+        width: auto;
+        height: 48px;
+    }
+}
+
+// Search
+.p-query-list {
+    .media-content .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 96px;
+
+        p {
+            width: 100%;
+        }
+        
+        a {
+            color: $grey-darker;
+            &:hover {
+                color: $postech-red;
+            }
+        }
+
+        .tags {
+            margin-top: -0.75rem;
+            margin-bottom: -0.25rem;
+        }
+
+        strong {
+            font-size: 1.5em !important;
+        }
+
+        small {
+            font-size: 1em !important;
+            margin-left: 0.25rem;
+        }
+    }
+}
+
+.pagination {
+    margin-top: 3em !important;
+}
+
+// Main page
+.p-hero {
+    height: 600px;
+    background-color: $postech-gray;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+
+    @include until($desktop) {
+        text-align: center;
+        height: 400px;
+    }
+
+    .container {
+        @include until($desktop) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
+    h1 {
+        font-size: 5rem;
+        font-weight: 600;
+        color: $white;
+        text-shadow: 0 0 10px $black;
+    }
+    h2 {
+        font-size: 3rem;
+        font-weight: 00;
+        line-height: 1;
+        color: $white;
+        text-shadow: 0 0 10px $black;
+    }
+    i {
+        margin-left: 0.75rem;
+    }
+    .button {
+        margin-top: 2rem;
+    }
+}
+.p-item-list {
+    .box {
+        .title {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .button {
+            margin-top: 1rem;
+        }
+    }
+}
+
+// About page
+.p-member-list {
+    .media-content .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 96px;
+
+        p {
+            width: 100%;
+        }
+
+        .p-name {
+            margin-bottom: 0;
+        }
+
+        small {
+            margin-left: 0.25rem;
+        }
+    }
+
+    .p-leader {
+        .media-content .content {
+            min-height: 128px !important;
+        }
+
+        margin-top: 2rem !important;
+        margin-bottom: 3rem !important;
+
+        strong {
+            font-size: 1.5em !important;
+        }
+
+        small {
+            font-size: 1em;
+            margin-left: 0.5rem !important;
+        }
+    }
+}
+
+// Post
+.p-post {
+
+    .title {
+        margin-top: 2rem;
+
+        @include until($desktop) {
+            margin-top: 0;
+        }
+    }
+
+    .columns {
+        flex-direction: row-reverse;
+    }
+
+    .p-panel-title {
+        font-weight: bold;
+        color: $text-light;
+        width: 80px;
+        min-width: 80px;
+    }
+
+    .p-subtitle {
+        @extend .subtitle;
+
+        font-size: 1.75em !important;
+        margin-top: 3rem !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0.5rem !important;
+        border-bottom: 1px solid $grey-dark !important;
+
+        &::before {
+            content: "• ";
+        }
+    }
+
+    .p-subtitle-decoration {
+        margin-bottom: 1.5em;
+        width: 150px;
+        height: 4px;
+        background-color: $poweron-blue;
+    }
+
+    .p-table {
+        td {
+            vertical-align: middle;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+
+            &:first-child {
+                font-size: 1.125em;
+                font-weight: bold;
+                text-align: center;
+                background-color: $white-ter;
+                width: 120px;
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+// 404
+.p-404 {
+    h1 {
+        font-size: 16em !important;
+        color: $warning !important;
+        margin-bottom: 0 !important;
+
+        @include until($tablet) {
+            font-size: 8em !important;
+        }
+    }
+    h3 {
+        font-size: 5em !important;
+        margin-top: 0 !important;
+        margin-bottom: 0.25rem !important;
+
+        @include until($tablet) {
+            font-size: 2em !important;
+            margin-bottom: 1rem !important;
+        }
+    }
+    h4 {
+        font-size: 4em;
+        margin-top: 0 !important;
+
+        @include until($tablet) {
+            font-size: 1em !important;
+        }
+    }
+}
+
+@import "../node_modules/bulma/bulma";
